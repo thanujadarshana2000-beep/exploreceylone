@@ -335,10 +335,37 @@ Don't have an account?
 </div>
 
 <script>
+
 document.querySelector("form").addEventListener("submit",function(e){
 
 e.preventDefault();
 
+
+let email = document.querySelector('input[type="email"]').value;
+
+let password = document.querySelector('input[type="password"]').value;
+
+
+// Demo login details
+
+if(email === "user@gmail.com" && password === "123456"){
+
 alert("Login Successful!");
 
+window.location.href = "index.html";
+
+}
+
+else{
+
+alert("Incorrect Email or Password!");
+
+}
+
+
 });
+
+</script>
+
+</body>
+</html>
