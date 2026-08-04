@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore Sri Lanka | Travel Articles</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+background:#f5f7fa;
+color:#222;
+
+}
+
+
+.navbar{
+
+background:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+}
+
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+color:#0b8457;
+
+}
+
+
+.logo span{
+
+color:#f4b400;
+
+}
+
+
+.navbar a{
+
+text-decoration:none;
+color:#333;
+margin-left:25px;
+font-weight:500;
+
+}
+
+
+.hero{
+
+height:350px;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1548013146-72479768bada");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+color:white;
+
+}
+
+
+.hero h1{
+
+font-size:45px;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+margin-top:10px;
+
+}
+
+
+
+.search{
+
+text-align:center;
+margin:40px;
+
+}
+
+
+.search input{
+
+width:350px;
+padding:15px;
+border-radius:30px;
+border:1px solid #ddd;
+outline:none;
+
+}
+
+
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
+}
+
+
+
+.title{
+
+color:#0b8457;
+font-size:35px;
+margin-bottom:30px;
+
+}
+
+
+
+.article-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+
+
+.card{
+
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+.card img{
+
+width:100%;
+height:200px;
+object-fit:cover;
+
+}
+
+
+
+.card-body{
+
+padding:25px;
+
+}
+
+
+
+.card-body h2{
+
+font-size:22px;
+color:#0b8457;
+
+}
+
+
+
+.card-body p{
+
+color:#666;
+margin:15px 0;
+
+}
+
+
+
+button{
+
+background:#0b8457;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+background:#066243;
+
+}
+
+
+
+.footer{
+
+margin-top:70px;
+background:#0b2a36;
+color:white;
+padding:30px;
+text-align:center;
+
+}
+
+
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:30px;
+
+}
+
+
+.search input{
+
+width:90%;
+
+}
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+Explore<span>SL</span>
+
+</div>
+
+
+<div>
+
+<a href="index.html">Home</a>
+
+<a href="article.html">Articles</a>
+
+<a href="login.html">Login</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+
+<div>
+
+<h1>
+Explore Sri Lanka Stories
+</h1>
+
+
+<p>
+Travel guides, hidden places and local experiences
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- Search -->
+
+<div class="search">
+
+<input type="text" placeholder="Search articles...">
+
+</div>
+
+
+
+
+
+<!-- Articles -->
+
+
+<div class="container">
+
+
+<h1 class="title">
+
+Latest Travel Articles
+
+</h1>
+
+
+
+<div class="article-grid">
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1588598198321-9735d8a7f6f4">
+
+
+<div class="card-body">
+
+<h2>
+Top 10 Places to Visit in Sri Lanka
+</h2>
+
+
+<p>
+
+Discover beautiful beaches, mountains,
+wildlife and historical locations.
+
+</p>
+
+
+<button>
+Read More
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1604848698030-c434ba08ece1">
+
+
+<div class="card-body">
+
+
+<h2>
+Ultimate Ella Travel Guide
+</h2>
+
+
+<p>
+
+Explore Nine Arch Bridge, waterfalls,
+hiking trails and amazing views.
+
+</p>
+
+
+<button>
+Read More
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0">
+
+
+<div class="card-body">
+
+
+<h2>
+Yala Safari Experience
+</h2>
+
+
+<p>
+
+Meet elephants, leopards and
+Sri Lanka's amazing wildlife.
+
+</p>
+
+
+<button>
+Read More
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1564507592333-c60657eea523">
+
+
+<div class="card-body">
+
+
+<h2>
+Ancient Wonders of Sigiriya
+</h2>
+
+
+<p>
+
+Learn about the history of the
+world famous rock fortress.
+
+</p>
+
+
+<button>
+Read More
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer class="footer">
+
+<p>
+© 2026 Explore Sri Lanka | Discover Paradise 🌴
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>
