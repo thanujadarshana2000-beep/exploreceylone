@@ -304,67 +304,11 @@ Login
   </div>
 </section>
 
-<!-- ====== DESTINATIONS ====== -->
-<section id="destinations">
-  <div class="container">
-    <h2 class="section-title">Popular Destinations</h2>
-    <p class="section-sub">Discover the best of Sri Lanka</p>
-    <div class="card-grid" id="destGrid">
-      <!-- cards by js -->
-    </div>
-  </div>
-</section>
-
-<!-- ====== EXPERIENCES ====== -->
-<section id="experiences" style="background:var(--bg-light);">
-  <div class="container">
-    <h2 class="section-title">Travel Experiences</h2>
-    <div class="card-grid" id="expGrid"></div>
-  </div>
-</section>
-
-<!-- ====== GUIDES ====== -->
-<section id="guides">
-  <div class="container">
-    <h2 class="section-title">Travel Guides</h2>
-    <p class="section-sub">Professional local guides</p>
-    <div class="card-grid" id="guideGrid"></div>
-  </div>
-</section>
-
-<!-- ====== HOTELS ====== -->
-<section id="hotels" style="background:var(--bg-light);">
-  <div class="container">
-    <h2 class="section-title">Hotels & Stays</h2>
-    <div class="card-grid" id="hotelGrid"></div>
-  </div>
-</section>
-
 <!-- ====== ARTICLES ====== -->
 <section id="articles">
   <div class="container">
     <h2 class="section-title">Travel Articles</h2>
     <div class="card-grid" id="articleGrid"></div>
-  </div>
-</section>
-
-<!-- ====== TESTIMONIALS ====== -->
-<section style="background:var(--bg-light);">
-  <div class="container">
-    <h2 class="section-title">What Travelers Say</h2>
-    <div class="testimonial-slider" id="testimonialSlider"></div>
-  </div>
-</section>
-
-<!-- ====== STATISTICS ====== -->
-<section>
-  <div class="container">
-    <div class="stats-grid" id="statsGrid">
-      <div class="stat-item"><h3 id="stat1">0</h3><p>Guides</p></div>
-      <div class="stat-item"><h3 id="stat2">0</h3><p>Hotels</p></div>
-      <div class="stat-item"><h3 id="stat3">0</h3><p>Tours</p></div>
-      <div class="stat-item"><h3 id="stat4">0</h3><p>Happy Travelers</p></div>
-    </div>
   </div>
 </section>
 
@@ -409,40 +353,13 @@ Login
   (function() {
     "use strict";
     // ----- data -----
-    const destinations = [
-      { name: 'Sigiriya', img: 'sigiriya.jpeg' },
-      { name: 'Ella', img: 'https://picsum.photos/id/1018/400/300', desc: 'Misty mountains', rating: 4.8, price: '$35' },
-      { name: 'Yala', img: 'https://picsum.photos/id/1025/400/300', desc: 'Wildlife safari', rating: 4.7, price: '$80' },
-      { name: 'Mirissa', img: 'https://picsum.photos/id/1027/400/300', desc: 'Whale watching', rating: 4.6, price: '$60' },
-      { name: 'Galle Fort', img: 'https://picsum.photos/id/1040/400/300', desc: 'Colonial charm', rating: 4.9, price: '$50' },
-      { name: 'Nuwara Eliya', img: 'https://picsum.photos/id/1043/400/300', desc: 'Tea country', rating: 4.5, price: '$40' },
-    ];
-    const experiences = [
-      { name: 'Safari', price: '$90', duration: '3h', difficulty: 'Easy' },
-      { name: 'Whale Watching', price: '$70', duration: '4h', difficulty: 'Moderate' },
-      { name: 'Hiking', price: '$30', duration: '5h', difficulty: 'Hard' },
-      { name: 'Surfing', price: '$50', duration: '2h', difficulty: 'Moderate' },
-    ];
-    const guides = [
-      { name: 'Samantha', lang: 'English, Sinhala', exp: '8 years', rating: 4.9, price: '$100/day' },
-      { name: 'Nuwan', lang: 'English, Tamil', exp: '6 years', rating: 4.7, price: '$85/day' },
-      { name: 'Marie', lang: 'French, English', exp: '5 years', rating: 4.8, price: '$110/day' },
-    ];
-    const hotels = [
-      { name: 'Ocean Villa', loc: 'Mirissa', price: '$200', stars: 5, facilities: 'Pool, WiFi, Breakfast' },
-      { name: 'Jungle Lodge', loc: 'Yala', price: '$150', stars: 4, facilities: 'Restaurant, Parking' },
-      { name: 'Tea Hills', loc: 'Nuwara Eliya', price: '$120', stars: 4, facilities: 'WiFi, Breakfast' },
-    ];
+   
     const articles = [
       { title: 'Top 20 Places in Sri Lanka', author: 'Lakshmi', date: 'Dec 12', read: '5 min', category: 'Travel' },
       { title: 'Ultimate Ella Guide', author: 'Kiran', date: 'Nov 20', read: '7 min', category: 'Guide' },
       { title: 'Yala Safari Guide', author: 'Dilshan', date: 'Oct 5', read: '6 min', category: 'Safari' },
     ];
-    const testimonials = [
-      { name: 'Anna', country: 'Germany', stars: 5, text: 'Incredible experience with local guides!' },
-      { name: 'James', country: 'UK', stars: 5, text: 'Sri Lanka is paradise. Highly recommend.' },
-      { name: 'Mei', country: 'China', stars: 4, text: 'Beautiful culture and nature.' },
-    ];
+  
 
     // ----- render functions -----
     function renderCards(containerId, data, templateFn) {
@@ -450,16 +367,9 @@ Login
       if (!container) return;
       container.innerHTML = data.map(templateFn).join('');
     }
-    function destCard(d) { return `<div class="card"><div class="card-img" style="background-image:url('${d.img}')"></div><div class="card-body"><h4>${d.name}</h4><p>${d.desc}</p><div class="rating">⭐ ${d.rating}</div><div class="price">${d.price}</div><button class="btn-secondary" style="margin-top:10px;">View Details</button></div></div>`; }
-    function expCard(e) { return `<div class="card"><div class="card-img" style="background-image:url('https://picsum.photos/seed/${e.name}/400/300')"></div><div class="card-body"><h4>${e.name}</h4><p>${e.price} · ${e.duration} · ${e.difficulty}</p><button class="btn-primary" style="padding:6px 18px;">Book</button></div></div>`; }
-    function guideCard(g) { return `<div class="card"><div class="card-img" style="background-image:url('https://picsum.photos/seed/${g.name}/400/300')"></div><div class="card-body"><h4>${g.name}</h4><p>${g.lang}</p><p>⭐ ${g.rating} · ${g.price}</p><button class="btn-accent" style="padding:6px 16px;">Book Guide</button></div></div>`; }
-    function hotelCard(h) { return `<div class="card"><div class="card-img" style="background-image:url('https://picsum.photos/seed/${h.name}/400/300')"></div><div class="card-body"><h4>${h.name}</h4><p>${h.loc} · ${'⭐'.repeat(h.stars)}</p><p>${h.price}/night</p><p style="font-size:0.8rem;">${h.facilities}</p><button class="btn-primary" style="padding:6px 16px;">Book Now</button></div></div>`; }
+    
     function articleCard(a) { return `<div class="card"><div class="card-img" style="background-image:url('https://picsum.photos/seed/${a.title}/400/300')"></div><div class="card-body"><h4>${a.title}</h4><p>${a.author} · ${a.date} · ${a.read}</p><span style="background:var(--accent);padding:2px 12px;border-radius:30px;">${a.category}</span><br><button class="btn-secondary" style="margin-top:10px;padding:6px 16px;">Read More</button></div></div>`; }
 
-    renderCards('destGrid', destinations, destCard);
-    renderCards('expGrid', experiences, expCard);
-    renderCards('guideGrid', guides, guideCard);
-    renderCards('hotelGrid', hotels, hotelCard);
     renderCards('articleGrid', articles, articleCard);
 
     // testimonials
