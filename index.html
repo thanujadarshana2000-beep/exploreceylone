@@ -101,18 +101,7 @@
     }
     .btn-accent:hover { background: #dba100; transform: scale(1.02); }
 
-    /* ========== navigation ========== */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 14px 0;
-      background: rgba(255,255,255,0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      transition: 0.3s;
-    }
+    
     .navbar.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
     .nav-container {
       display: flex;
@@ -135,90 +124,6 @@
     .nav-links a:hover { color: var(--accent); }
     .nav-actions { display: flex; gap: 12px; align-items: center; }
     .nav-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: var(--primary); cursor: pointer; }
-
-    /* ========== hero ========== */
-    .hero {
-      margin-top: 78px;
-      min-height: 90vh;
-      background: linear-gradient(145deg, #0B4F6C 0%, #1a6f8f 100%);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      border-radius: 0 0 48px 48px;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 100 L100 60 L100 100 Z" fill="rgba(0,0,0,0.2)"/></svg>') bottom/100% 40% no-repeat;
-    }
-    .hero-content { position: relative; z-index: 2; color: #fff; padding: 40px 0; max-width: 700px; }
-    .hero h1 { font-size: clamp(2.6rem, 8vw, 4.8rem); font-weight: 800; line-height: 1.1; }
-    .hero p { font-size: 1.3rem; margin: 20px 0 30px; opacity: 0.9; font-weight: 300; }
-    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
-    .search-bar-hero {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(6px);
-      border-radius: 80px;
-      padding: 12px 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-top: 36px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .search-bar-hero input, .search-bar-hero select {
-      background: rgba(255,255,255,0.1);
-      border: none;
-      padding: 12px 18px;
-      border-radius: 60px;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      flex: 1 0 120px;
-    }
-    .search-bar-hero input::placeholder { color: rgba(255,255,255,0.7); }
-    .search-bar-hero button { background: var(--accent); border: none; border-radius: 60px; padding: 12px 28px; font-weight: 600; cursor: pointer; }
-
-    /* ========== sections ========== */
-    section { padding: 70px 0; }
-    .section-title { font-size: 2.4rem; font-weight: 700; margin-bottom: 16px; color: var(--primary); }
-    .section-sub { color: #555; margin-bottom: 40px; }
-
-    /* ========== cards ========== */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 30px 40px -16px rgba(0,0,0,0.15); }
-    .card-img { height: 200px; background: #ddd; background-size: cover; background-position: center; }
-    .card-body { padding: 20px; }
-    .card-body h4 { font-size: 1.2rem; margin-bottom: 6px; }
-    .card-body .rating { color: var(--accent); }
-    .card-body .price { font-weight: 700; color: var(--secondary); }
-
-    /* ========== testimonials slider ========== */
-    .testimonial-slider { display: flex; gap: 30px; overflow-x: auto; padding: 12px 4px; scroll-snap-type: x mandatory; }
-    .testimonial-item { min-width: 300px; flex: 0 0 auto; background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); scroll-snap-align: start; }
-
-    /* ========== statistics ========== */
-    .stats-grid { display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; gap: 30px; }
-    .stat-item h3 { font-size: 3rem; font-weight: 800; color: var(--primary); }
-    .stat-item p { color: #555; }
-
-    /* ========== contact / footer ========== */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .footer { background: #0b2a36; color: #ccc; padding: 50px 0 20px; margin-top: 40px; }
-    .footer a { color: #bbb; transition: var(--transition); }
-    .footer a:hover { color: var(--accent); }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; }
 
     /* ========== dark mode ========== */
     body.dark-mode { background: #12181c; color: #e0e0e0; }
@@ -259,50 +164,13 @@
 <!-- Progress bar -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ====== NAV ====== -->
-<nav class="navbar" id="navbar">
-  <div class="container nav-container">
-    <div class="logo">Explore<span>SL</span></div>
-    <button class="nav-toggle" id="navToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#destinations">Destinations</a></li>
-      <li><a href="#experiences">Experiences</a></li>
-      <li><a href="#guides">Guides</a></li>
-      <li><a href="#hotels">Hotels</a></li>
-      <li><a href="#articles">Articles</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#"><i class="fas fa-search"></i></a></li>
-      <li>
-<a href="login.html" class="btn-secondary" style="padding:6px 18px;">
-Login
-</a>
-</li>
-      <li><button class="btn-primary" style="padding:6px 18px;">Book Now</button></li>
-      <li><button id="darkModeToggle" style="background:none;border:none;font-size:1.4rem;cursor:pointer;"><i class="fas fa-moon"></i></button></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- ====== HERO ====== -->
 <section class="hero" id="home">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <h1>Discover Paradise <br>with Local Experts</h1>
-    <p>Book local guides, hotels and unforgettable adventures.</p>
-    <div class="hero-buttons">
-      <button class="btn-primary"><i class="fas fa-compass"></i> Explore Now</button>
-      <button class="btn-accent"><i class="fas fa-user-tie"></i> Book a Guide</button>
-      <button class="btn-secondary" style="background:rgba(255,255,255,0.2); backdrop-filter:blur(4px);"><i class="fas fa-play"></i> Watch Video</button>
-    </div>
-    <div class="search-bar-hero">
-      <input type="text" placeholder="Destination" />
-      <input type="date" value="2026-08-10" />
-      <input type="date" value="2026-08-16" />
-      <select><option>2 Guests</option><option>4 Guests</option></select>
-      <button><i class="fas fa-search"></i> Search</button>
-    </div>
-  </div>
-</section>
+    <h1>Discover Beauty Of Paradise <br>with Local Experts</h1>
+    
 
 <!-- ====== ARTICLES ====== -->
 <section id="articles">
