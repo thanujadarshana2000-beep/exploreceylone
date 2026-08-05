@@ -1,327 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
-  <title>Explore Sri Lanka · Discover Paradise with Local Experts</title>
-  <!-- Meta & SEO -->
-  <meta name="description" content="Explore Sri Lankan Beauty" />
-  <meta property="og:title" content="Explore Sri Lanka · Travel with Local Experts" />
-  <meta property="og:description" content="Read valluble Articles" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Explore Sri Lanka · Travel with Local Experts" />
-  <!-- Google Fonts (preloaded) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Font Awesome (icon library) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    /* ========== CSS Variables & Reset ========== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background:sigiriya.jpeg;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-    :root {
-      --primary: #0B4F6C;
-      --secondary: #2E8B57;
-      --accent: #F4B400;
-      --bg-light: #F5F7FA;
-      --dark: #222;
-      --white: #fff;
-      --shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
-      --glass: rgba(255,255,255,0.2);
-      --radius: 24px;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; height: auto; }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-    /* ========== scrollbar ========== */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #f0f0f0; }
-    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 12px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Sri Lanka</title>
 
-    /* ========== Glassmorphism & utilities ========== */
-    .glass-card {
-      background: rgba(255,255,255,0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
-      border: 1px solid rgba(255,255,255,0.5);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    /* ========== Buttons ========== */
-    .btn-primary {
-      background: linear-gradient(145deg, var(--primary), #083b4f);
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 8px 18px -6px rgba(11,79,108,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 24px -8px rgba(11,79,108,0.4); }
-    .btn-secondary {
-      background: var(--secondary);
-      color: #fff;
-      border: none;
-      padding: 10px 22px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-secondary:hover { background: #1f6e43; transform: scale(1.02); }
-    .btn-accent {
-      background: var(--accent);
-      color: #222;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .btn-accent:hover { background: #dba100; transform: scale(1.02); }
+<style>
 
-    
-    .navbar.scrolled { background: rgba(255,255,255,0.92); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-    .logo span { color: var(--accent); }
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .nav-links a { transition: var(--transition); }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-actions { display: flex; gap: 12px; align-items: center; }
-    .nav-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: var(--primary); cursor: pointer; }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    /* ========== dark mode ========== */
-    body.dark-mode { background: #12181c; color: #e0e0e0; }
-    body.dark-mode .navbar { background: rgba(18,24,28,0.85); border-bottom-color: rgba(255,255,255,0.05); }
-    body.dark-mode .card { background: #1e2a30; color: #ddd; }
-    body.dark-mode .glass-card { background: rgba(30,42,48,0.6); border-color: rgba(255,255,255,0.05); }
-    body.dark-mode .section-sub { color: #aaa; }
-    body.dark-mode .footer { background: #0b1a20; }
+body{
+background:#f8f8f8;
+}
 
-    /* ========== responsive ========== */
-    @media (max-width: 992px) {
-      .nav-links { display: none; flex-direction: column; width: 100%; background: rgba(255,255,255,0.95); padding: 20px; border-radius: 20px; margin-top: 10px; }
-      .nav-links.open { display: flex; }
-      .nav-toggle { display: block; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .hero { min-height: 70vh; }
-    }
-    @media (max-width: 600px) {
-      .search-bar-hero { flex-direction: column; align-items: stretch; border-radius: 28px; }
-      .search-bar-hero input { flex: 1; }
-    }
+/* Hero Section */
 
-    /* ========== extra: back-to-top ========== */
-    #backToTop {
-      position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: #fff;
-      border: none; border-radius: 60px; padding: 14px 18px; font-size: 1.4rem; cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2); z-index: 999; transition: var(--transition);
-      opacity: 0; pointer-events: none;
-    }
-    #backToTop.show { opacity: 1; pointer-events: auto; }
+.hero{
 
-    /* progress bar */
-    .progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: var(--accent); z-index: 9999; width: 0%; transition: width 0.1s; }
-  </style>
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+
+}
+
+/* Navbar */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+color:white;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:700;
+letter-spacing:1px;
+
+}
+
+.logo span{
+
+color:#00d084;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+
+}
+
+nav ul li:hover{
+
+color:#00d084;
+
+}
+
+.btn{
+
+padding:10px 24px;
+background:#00d084;
+border:none;
+border-radius:30px;
+color:white;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#00b96b;
+
+}
+
+/* Hero Content */
+
+.hero-content{
+
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+color:white;
+padding:20px;
+
+}
+
+.hero-content h1{
+
+font-size:70px;
+font-weight:700;
+margin-bottom:20px;
+line-height:1.2;
+
+}
+
+.hero-content p{
+
+font-size:20px;
+max-width:750px;
+margin-bottom:40px;
+opacity:.95;
+
+}
+
+/* Search */
+
+.search-box{
+
+background:white;
+padding:8px;
+border-radius:50px;
+display:flex;
+width:650px;
+max-width:95%;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+.search-box input{
+
+flex:1;
+border:none;
+outline:none;
+padding:16px 20px;
+font-size:17px;
+border-radius:50px;
+
+}
+
+.search-box button{
+
+border:none;
+background:#00d084;
+color:white;
+padding:16px 30px;
+border-radius:50px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+
+}
+
+.search-box button:hover{
+
+background:#00b96b;
+
+}
+
+/* Explore Button */
+
+.explore{
+
+margin-top:35px;
+padding:16px 45px;
+background:white;
+color:#222;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+
+}
+
+.explore:hover{
+
+background:#00d084;
+color:white;
+
+}
+
+/* Scroll */
+
+.scroll{
+
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+color:white;
+font-size:15px;
+opacity:.8;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:42px;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+.logo{
+
+font-size:25px;
+
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- Progress bar -->
-<div class="progress-bar" id="progressBar"></div>
+<section class="hero">
 
+<nav>
 
-<!-- ====== HERO ====== -->
-<section class="hero" id="home">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1>Discover Beauty Of Paradise <br>with Local Experts</h1>
-    
+<div class="logo">
+Explore <span>Sri Lanka</span>
+</div>
 
-<!-- ====== ARTICLES ====== -->
-<section id="articles">
-  <div class="container">
-    <h2 class="section-title">Travel Articles</h2>
-    <div class="card-grid" id="articleGrid"></div>
-  </div>
+<ul>
+
+<li>Home</li>
+<li>Destinations</li>
+<li>Articles</li>
+<li>Guides</li>
+<li>Hotels</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Sign In</button>
+
+</nav>
+
+<div class="hero-content">
+
+<h1>Discover the Paradise of Sri Lanka</h1>
+
+<p>
+Explore breathtaking beaches, misty mountains, wildlife safaris,
+ancient kingdoms, and unforgettable adventures with local travel experts.
+</p>
+
+<div class="search-box">
+
+<input type="text" placeholder="Search destinations, articles or hotels...">
+
+<button>Search</button>
+
+</div>
+
+<a href="#" class="explore">
+Explore Now →
+</a>
+
+</div>
+
+<div class="scroll">
+
+▼ Scroll Down
+
+</div>
+
 </section>
 
-<!-- ====== CONTACT ====== -->
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-grid">
-      <div>
-        <p><i class="fas fa-map-pin"></i> Colombo, Sri Lanka</p>
-        <p><i class="fas fa-phone"></i> +94 77 123 4567</p>
-        <p><i class="fas fa-envelope"></i> hello@exploresl.com</p>
-        <div style="margin-top:20px;display:flex;gap:16px;font-size:2rem;">
-          <i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i class="fab fa-twitter"></i><i class="fab fa-whatsapp"></i>
-        </div>
-      </div>
-      <form id="contactForm" style="display:grid;gap:16px;">
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
-        <textarea rows="4" placeholder="Message"></textarea>
-        <button class="btn-primary" type="submit">Send <i class="fas fa-arrow-right"></i></button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FOOTER ====== -->
-<footer class="footer">
-  <div class="container footer-grid">
-    <div><h4>Explore Sri Lanka</h4><p>Discover paradise with local experts.</p></div>
-    <div><h5>Quick Links</h5><a href="#">Destinations</a><br><a href="#">Guides</a><br><a href="#">Hotels</a></div>
-    <div><h5>Support</h5><a href="#">Privacy</a><br><a href="#">Terms</a><br><a href="#">Contact</a></div>
-    <div><h5>Newsletter</h5><input placeholder="Email" style="padding:8px;border-radius:40px;border:none;"/><button class="btn-accent" style="margin-top:6px;">Subscribe</button></div>
-  </div>
-  <div class="container" style="text-align:center;margin-top:30px;border-top:1px solid #2a4a5a;padding-top:20px;">&copy; 2026 Explore Sri Lanka. All rights reserved.</div>
-</footer>
-
-<!-- back to top -->
-<button id="backToTop" aria-label="back to top"><i class="fas fa-arrow-up"></i></button>
-
-<script>
-  (function() {
-    "use strict";
-    // ----- data -----
-   
-    const articles = [
-      { title: 'Top 20 Places in Sri Lanka', author: 'Lakshmi', date: 'Dec 12', read: '5 min', category: 'Travel' },
-      { title: 'Ultimate Ella Guide', author: 'Kiran', date: 'Nov 20', read: '7 min', category: 'Guide' },
-      { title: 'Yala Safari Guide', author: 'Dilshan', date: 'Oct 5', read: '6 min', category: 'Safari' },
-    ];
-  
-
-    // ----- render functions -----
-    function renderCards(containerId, data, templateFn) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      container.innerHTML = data.map(templateFn).join('');
-    }
-    
-    function articleCard(a) { return `<div class="card"><div class="card-img" style="background-image:url('https://picsum.photos/seed/${a.title}/400/300')"></div><div class="card-body"><h4>${a.title}</h4><p>${a.author} · ${a.date} · ${a.read}</p><span style="background:var(--accent);padding:2px 12px;border-radius:30px;">${a.category}</span><br><button class="btn-secondary" style="margin-top:10px;padding:6px 16px;">Read More</button></div></div>`; }
-
-    renderCards('articleGrid', articles, articleCard);
-
-    // testimonials
-    const tSlider = document.getElementById('testimonialSlider');
-    if (tSlider) {
-      tSlider.innerHTML = testimonials.map(t => `<div class="testimonial-item"><p>${'⭐'.repeat(t.stars)}</p><p>"${t.text}"</p><p><strong>${t.name}</strong> · ${t.country}</p></div>`).join('');
-    }
-
-    // ----- stats counter animation -----
-    const stats = [
-      { el: 'stat1', target: 1000, suffix: '+' },
-      { el: 'stat2', target: 500, suffix: '+' },
-      { el: 'stat3', target: 150, suffix: '+' },
-      { el: 'stat4', target: 20000, suffix: '+' }
-    ];
-    function animateStats() {
-      stats.forEach(s => {
-        const el = document.getElementById(s.el);
-        if (!el) return;
-        let current = 0;
-        const step = Math.ceil(s.target / 60);
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= s.target) { current = s.target; clearInterval(timer); }
-          el.textContent = current + s.suffix;
-        }, 30);
-      });
-    }
-    // IntersectionObserver for stats
-    const statsSection = document.querySelector('#statsGrid');
-    if (statsSection) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) { animateStats(); observer.unobserve(entry.target); } });
-      }, { threshold: 0.3 });
-      observer.observe(statsSection);
-    }
-
-    // ----- dark mode -----
-    const darkToggle = document.getElementById('darkModeToggle');
-    darkToggle?.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      darkToggle.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    });
-
-    // ----- mobile nav -----
-    document.getElementById('navToggle')?.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-
-    // ----- sticky navbar + progress bar -----
-    const navbar = document.getElementById('navbar');
-    const progress = document.getElementById('progressBar');
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      navbar.classList.toggle('scrolled', scrollTop > 20);
-      // progress
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      progress.style.width = percent + '%';
-      // back to top
-      const btn = document.getElementById('backToTop');
-      btn.classList.toggle('show', scrollTop > 300);
-    });
-
-    // back to top
-    document.getElementById('backToTop')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // ----- contact form toast (demo) -----
-    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('✅ Thank you! We will get back to you soon.');
-      this.reset();
-    });
-
-    // ----- smooth anchor links (scroll) -----
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-      });
-    });
-
-    console.log('Explore Sri Lanka · ready');
-  })();
-</script>
 </body>
 </html>
