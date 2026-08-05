@@ -322,11 +322,10 @@ Travel guides, hidden places and local experiences
 
 <!-- Search -->
 
-<div class="search">
-
-<input type="text" placeholder="Search articles...">
-
-</div>
+<input type="text" 
+id="searchInput" 
+placeholder="Search articles..."
+onkeypress="searchArticle(event)">
 
 
 
@@ -482,7 +481,53 @@ Read More
 
 </footer>
 
+<script>
 
+function searchArticle(event){
+
+    if(event.key === "Enter"){
+
+        let search = document.getElementById("searchInput").value.toLowerCase();
+
+
+        if(search.includes("knuckles")){
+
+            document.getElementById("knuckles").scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+
+        else if(search.includes("hanthana")){
+
+            document.getElementById("hanthana").scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+
+        else if(search.includes("idalgashinna")){
+
+            document.getElementById("idalgashinna").scrollIntoView({
+                behavior:"smooth"
+            });
+
+        }
+
+
+        else{
+
+            alert("Article not found!");
+
+        }
+
+    }
+
+}
+
+</script>
 
 </body>
 
