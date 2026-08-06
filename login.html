@@ -285,7 +285,7 @@ Welcome Back 👋
 
 <div class="input-box">
 <i class="fa-solid fa-lock"></i>
-<input type="password" placeholder="Password" required>
+<input type="password" id="password" placeholder="Password" required>
 </div>
 
 <div class="options">
@@ -336,42 +336,36 @@ Don't have an account?
 
 <script>
 
-document.querySelector("form").addEventListener("submit",function(e){
 
-e.preventDefault();
+ 
+document.querySelector("form").addEventListener("submit", function(e) {
 
+    e.preventDefault();
 
-let email = document.querySelector('input[type="email"]').value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
-let password = document.querySelector('input[type="password"]').value;
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
+    let foundUser = users.find(user =>
+        user.email === email &&
+        user.password === password
+    );
 
-// Get saved data
+    if(foundUser){
 
-let savedEmail = localStorage.getItem("userEmail");
+        localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
-let savedPassword = localStorage.getItem("userPassword");
+        alert("Login Successful!");
 
+        window.location.href = "article.html";
 
+    } else {
 
-if(email === savedEmail && password === savedPassword){
+        alert("Invalid Email or Password!");
 
+    }
 
-alert("Login Successful!");
-
-
-window.location.href="article.html";
-
-
-}
-
-else{
-
-
-alert("Invalid Email or Password");
-
-
-}
 
 
 });
