@@ -335,33 +335,35 @@ Don't have an account?
 </div>
 
 <script>
-document.querySelector("form").addEventListener("submit", function(e){
+document.querySelector("form").addEventListener("submit", function(e) {
 
     e.preventDefault();
 
-    let email = document.querySelector('input[type="email"]').value;
-    let password = document.querySelector('input[type="password"]').value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    let user = users.find(u => u.email === email && u.password === password);
+    let foundUser = users.find(user =>
+        user.email === email &&
+        user.password === password
+    );
 
-    if(user){
+    if(foundUser){
+
+        localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
         alert("Login Successful!");
 
-        localStorage.setItem("loggedUser", user.fullName);
-
         window.location.href = "article.html";
 
-    }else{
+    } else {
 
         alert("Invalid Email or Password!");
 
     }
 
 });
-
 
 
 </script>
