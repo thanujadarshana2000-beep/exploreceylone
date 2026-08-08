@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore Sri Lanka | Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+    color:#222;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    padding:15px 7%;
+
+}
+
+.nav-container{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    max-width:1300px;
+    margin:auto;
+
+}
+
+.logo{
+
+    font-size:27px;
+    font-weight:800;
+
+}
+
+.logo .green{
+    color:#00a86b;
+}
+
+.logo .orange{
+    color:#ff9800;
+}
+
+
+.nav-links{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#0b8457;
+
+}
+
+
+.logout-btn{
+
+    border:none;
+
+    background:#0b8457;
+
+    color:white;
+
+    padding:9px 18px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+}
+
+.logout-btn:hover{
+
+    background:#066243;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:480px;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.55)
+    ),
+
+    url("https://images.unsplash.com/photo-1588598198321-9735fd524f9b?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-content{
+
+    width:90%;
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.hero h1{
+
+    font-size:clamp(35px,6vw,65px);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+}
+
+.hero h1 span{
+
+    color:#00d084;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    margin:20px auto 30px;
+
+    max-width:700px;
+
+    color:#eee;
+
+}
+
+.welcome{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    padding:8px 20px;
+
+    border-radius:30px;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+    padding:75px 7%;
+
+}
+
+.section-header{
+
+    max-width:1200px;
+
+    margin:0 auto 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.section-title{
+
+    font-size:34px;
+
+    color:#0b8457;
+
+}
+
+.section-description{
+
+    color:#666;
+
+    margin-top:5px;
+
+}
+
+.view-all{
+
+    text-decoration:none;
+
+    color:#0b8457;
+
+    font-weight:600;
+
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.category-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.category-card{
+
+    min-height:330px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.category-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,.85)
+    );
+
+}
+
+.category-content{
+
+    position:absolute;
+
+    z-index:2;
+
+    bottom:30px;
+
+    left:30px;
+
+    right:30px;
+
+    color:white;
+
+}
+
+.category-content i{
+
+    font-size:35px;
+
+    margin-bottom:12px;
+
+    color:#00d084;
+
+}
+
+.category-content h3{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.category-content p{
+
+    color:#eee;
+
+    margin-bottom:18px;
+
+}
+
+.category-btn{
+
+    display:inline-block;
+
+    background:#0b8457;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.category-btn:hover{
+
+    background:#066243;
+
+}
+
+
+/* =========================
+   FEATURED PRODUCTS
+========================= */
+
+.products-section{
+
+    background:#eef7f2;
+
+}
+
+.product-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.product-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.product-card img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+}
+
+.product-body{
+
+    padding:20px;
+
+}
+
+.product-body h3{
+
+    color:#0b8457;
+
+    font-size:19px;
+
+}
+
+.product-body p{
+
+    color:#666;
+
+    font-size:14px;
+
+    margin:8px 0;
+
+}
+
+.price{
+
+    color:#0b8457;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+.product-btn{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:12px;
+
+    background:#0b8457;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:9px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   ARTICLES
+========================= */
+
+.article-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.article-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.article-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.article-card img{
+
+    width:100%;
+
+    height:200px;
+
+    object-fit:cover;
+
+}
+
+.article-body{
+
+    padding:20px;
+
+}
+
+.article-body h3{
+
+    color:#0b8457;
+
+    font-size:19px;
+
+}
+
+.article-body p{
+
+    color:#666;
+
+    margin:10px 0;
+
+    font-size:14px;
+
+}
+
+.article-btn{
+
+    display:inline-block;
+
+    background:#0b8457;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    background:#0b2a36;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+}
+
+.footer h3{
+
+    margin-bottom:10px;
+
+}
+
+.footer p{
+
+    color:#bbb;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .product-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .article-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .nav-links a:not(.home-link){
+
+        display:none;
+
+    }
+
+    .category-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .article-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .section-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+<div class="nav-container">
+
+```
+<div class="logo">
+
+    <span class="green">Explore</span>
+    <span class="orange">Sri Lanka</span>
+
+</div>
+
+
+<div class="nav-links">
+
+    <a href="#home" class="home-link">
+        Home
+    </a>
+
+    <a href="#articles">
+        Articles
+    </a>
+
+    <a href="#products">
+        Products
+    </a>
+
+    <button class="logout-btn" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        Logout
+    </button>
+
+</div>
+```
+
+</div>
+
+</nav>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+```
+<div class="welcome" id="welcomeUser">
+    Welcome 👋
+</div>
+
+<h1>
+    Discover <span>Sri Lanka</span>
+</h1>
+
+<p>
+    Explore beautiful destinations, read inspiring travel stories,
+    and discover authentic Sri Lankan products.
+</p>
+```
+
+</div>
+
+</section>
+
+<!-- =========================
+     MAIN CATEGORIES
+========================= -->
+
+<section class="section">
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+Explore Our World
+</h2>
+
+<p class="section-description">
+Choose what you want to discover.
+</p>
+
+</div>
+
+</div>
+
+<div class="category-grid">
+
+<!-- ARTICLE -->
+
+<div class="category-card"
+style="background-image:url('https://images.unsplash.com/photo-1588598198321-9735fd524f9b?auto=format&fit=crop&w=1000&q=80');">
+
+<div class="category-content">
+
+<i class="fas fa-book-open"></i>
+
+<h3>
+Travel Articles
+</h3>
+
+<p>
+Discover Sri Lanka's hidden places, mountains,
+wildlife, culture and travel guides.
+</p>
+
+<a href="article.html" class="category-btn">
+Explore Articles
+<i class="fas fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<div class="category-card"
+style="background-image:url('https://images.unsplash.com/photo-1606914469633-bd392e8f6a9b?auto=format&fit=crop&w=1000&q=80');">
+
+<div class="category-content">
+
+<i class="fas fa-shopping-bag"></i>
+
+<h3>
+Sri Lankan Products
+</h3>
+
+<p>
+Discover authentic Sri Lankan tea, spices,
+handicrafts, food products and souvenirs.
+</p>
+
+<a href="products.html" class="category-btn">
+Explore Products
+<i class="fas fa-arrow-right"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     FEATURED PRODUCTS
+========================= -->
+
+<section class="section products-section" id="products">
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+Featured Sri Lankan Products
+</h2>
+
+<p class="section-description">
+Authentic products from Sri Lanka.
+</p>
+
+</div>
+
+<a href="products.html" class="view-all">
+View All →
+</a>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1597481499750-3e6b22637f14?auto=format&fit=crop&w=600&q=80">
+
+<div class="product-body">
+
+<h3>
+Ceylon Tea
+</h3>
+
+<p>
+Premium Sri Lankan black tea.
+</p>
+
+<div class="price">
+$12
+</div>
+
+<a href="products.html" class="product-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80">
+
+<div class="product-body">
+
+<h3>
+Ceylon Cinnamon
+</h3>
+
+<p>
+Authentic Sri Lankan cinnamon.
+</p>
+
+<div class="price">
+$8
+</div>
+
+<a href="products.html" class="product-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80">
+
+<div class="product-body">
+
+<h3>
+Sri Lankan Spices
+</h3>
+
+<p>
+Aromatic spices from Sri Lanka.
+</p>
+
+<div class="price">
+$15
+</div>
+
+<a href="products.html" class="product-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80">
+
+<div class="product-body">
+
+<h3>
+Handmade Crafts
+</h3>
+
+<p>
+Beautiful traditional Sri Lankan crafts.
+</p>
+
+<div class="price">
+$20
+</div>
+
+<a href="products.html" class="product-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     FEATURED ARTICLES
+========================= -->
+
+<section class="section" id="articles">
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+Featured Articles
+</h2>
+
+<p class="section-description">
+Read stories and travel guides about Sri Lanka.
+</p>
+
+</div>
+
+<a href="article.html" class="view-all">
+View All →
+</a>
+
+</div>
+
+<div class="article-grid">
+
+<div class="article-card">
+
+<img src="IMG-20250824-WA0065.jpg">
+
+<div class="article-body">
+
+<h3>
+Knuckles Mountain Range
+</h3>
+
+<p>
+Discover one of Sri Lanka's most beautiful
+mountain landscapes.
+</p>
+
+<a href="knuckles.html" class="article-btn">
+Read Article
+</a>
+
+</div>
+
+</div>
+
+<div class="article-card">
+
+<img src="IMG-20250706-WA0111.jpg">
+
+<div class="article-body">
+
+<h3>
+Hanthana Mountain Range
+</h3>
+
+<p>
+Explore the beautiful mountain range
+near Kandy.
+</p>
+
+<a href="hanthana.html" class="article-btn">
+Read Article
+</a>
+
+</div>
+
+</div>
+
+<div class="article-card">
+
+<img src="IMG-20250310-WA0646.jpg">
+
+<div class="article-body">
+
+<h3>
+Idalgashinna
+</h3>
+
+<p>
+Discover the misty paradise of Sri Lanka's
+hill country.
+</p>
+
+<a href="idalgashinna.html" class="article-btn">
+Read Article
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+<h3>
+Explore Sri Lanka
+</h3>
+
+<p>
+Discover Paradise • Explore Culture • Support Local
+</p>
+
+<p style="margin-top:15px;">
+© 2026 Explore Sri Lanka. All Rights Reserved.
+</p>
+
+</footer>
+
+<script>
+
+/* =========================
+   CHECK LOGIN
+========================= */
+
+let currentUser =
+    JSON.parse(localStorage.getItem("currentUser"));
+
+
+if(!currentUser){
+
+    alert("Please login first.");
+
+    window.location.href = "login.html";
+
+}
+
+
+/* =========================
+   SHOW USER NAME
+========================= */
+
+if(currentUser){
+
+    document.getElementById("welcomeUser").innerHTML =
+        "Welcome, " + currentUser.fullName + " 👋";
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+function logout(){
+
+    localStorage.removeItem("currentUser");
+
+    alert("You have been logged out.");
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
